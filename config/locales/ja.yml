@@ -1,0 +1,14 @@
+ ja:
+   activerecord:
+     models:
+       schedule:  スケジュール
+     attributes:
+       schedule:
+         title:  タイトル
+         end_date:  終了日
+         starting_date:  開始日
+         ending_date:  終了日
+            
+              
+            
+     

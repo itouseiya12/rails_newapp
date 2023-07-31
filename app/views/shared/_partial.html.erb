@@ -1,0 +1,50 @@
+<%= form_with model: @schedule do |f| %>
+  <% if @schedule.errors.any? %>
+    <div>
+      <ul>
+        <% @schedule.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div> 
+<% end %>       
+<table>
+  <tr>
+    <th><%= f.label :title ,"タイトル" %></th>
+    <td><%= f.text_field :title %></td>
+  </tr>
+  
+  <tr>
+    <th><%= f.label :starting_date ,"開始日" %></th>
+    <td><%= f.date_field :starting_date %></td>
+  </tr>
+  
+  <tr>
+    <th><%= f.label :ending_date ,"終了日" %></th>
+    <td><%= f.date_field :ending_date %></td>
+  </tr>
+      
+      
+
+  <tr>
+    <th><%= f.label :memo ,"メモ" %></th>
+    <td><%= f.text_area :memo %></td>
+  </tr>
+      
+  <tr>
+    <th><%= f.label :is_all_day,"終日"%></th>
+    <td><%= f.check_box :is_all_day, {}, "true", "false" %>
+        
+    <label>終日の場合はチェックを入れます</label></td>
+  </tr>
+        
+    
+</table>
+
+    
+
+
+    
+<input type="submit">
+    
+<% end %>
