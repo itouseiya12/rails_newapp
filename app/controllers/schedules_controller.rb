@@ -20,8 +20,7 @@ class SchedulesController < ApplicationController
     #Scheduleモデルを初期化
     @schedule = Schedule.new(params.require(:schedule).permit(:title, :starting_date, :ending_date, :is_all_day, :memo))
     #ScheduleモデルをDBへ保存
-    if @schedule.valid?
-       @schedule.save
+    if @schedule.save
        flash[:notice] = "新規スケジュールを作成しました" 
        redirect_to :schedules
     else
